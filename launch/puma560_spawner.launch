@@ -3,7 +3,7 @@
 	<arg name="x" default="0.0"/>
 	<arg name="y" default="0.0"/>
 	<arg name="z" default="0.0"/>
-	<arg name="urdf_robot_file" default="$(find puma560_robot)/urdf/puma_effort.urdf" />
+	<arg name="urdf_robot_file" default="$(find puma560_robot)/urdf/puma560_effort.urdf" />
 	<arg name="robot_name" default="puma560" />
 	<param name="robot_description" command="cat $(arg urdf_robot_file)" />
 	<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
