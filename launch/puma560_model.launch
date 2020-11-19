@@ -4,6 +4,7 @@
 	<arg name="gui" default="true"/>
 	<arg name="headless" default="false"/>
 	<arg name="paused" default="false" />
+	<arg name="urdf_file" default="puma560_pos.urdf" />
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
 		<arg name="debug" value="$(arg debug)" />
 		<arg name="paused" value="$(arg paused)" />
@@ -15,7 +16,7 @@
 		<arg name="x" value="0.0"/>
 		<arg name="y" value="0.0"/>
 		<arg name="z" value="0.0"/>
-		<arg name="urdf_robot_file" value="$(find puma560_robot)/urdf/puma560_effort.urdf"/>
+		<arg name="urdf_robot_file" value="$(find puma560_robot)/urdf/$(arg urdf_file)"/>
 		<arg name="robot_name" value="puma560" />
 	</include>
 </launch>	

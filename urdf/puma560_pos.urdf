@@ -6,7 +6,8 @@
   <!-- Gazebo ROS control plugin -->
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNameSpace>/puma560</robotNameSpace>
+      <robotNamespace>/puma560</robotNamespace>
+      <!-- robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType -->
     </plugin>
   </gazebo>
 
@@ -14,8 +15,8 @@
   <!-- Dummy link description -->
   <link name="world" />
   <joint name="joint_world" type="fixed">
-  	<parent link="world"/>
-  	<child link="base_link"/>
+    <parent link="world"/>
+    <child link="base_link"/>
   </joint>
 
   <!-- Base link description -->
@@ -261,14 +262,14 @@
     </actuator>
   </transmission>
   <transmission name="trans_joint_wrist_bend_to_roll">
-  	<type>transmission_interface/SimpleTransmission</type>
-  	<joint name="joint_wrist_bend_to_roll">
-  		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-  	</joint>
-  	<actuator name="motor_joint_wrist_bend_to_roll">
-  		<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-  		<mechanicalReduction>1</mechanicalReduction>
-  	</actuator>
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_wrist_bend_to_roll">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_joint_wrist_bend_to_roll">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
   </transmission>
 
 </robot>
